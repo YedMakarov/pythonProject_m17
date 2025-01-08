@@ -2,7 +2,8 @@ from fastapi import FastAPI
 from routers import task
 from routers import user
 
-app = FastAPI()
+# app = FastAPI()
+app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True}, debug=True)  # Для удобства работы со Swagger
 
 
 @app.get("/")
@@ -19,5 +20,5 @@ if __name__ == "__main__":
 
     uvicorn.run(app, host="127.0.0.1", port=8000)
 
-# C:\Users\...\PycharmProjects\pythonProject\module_16> python -m uvicorn main:app
+# C:\Users\Yed\PycharmProjects\pythonProject_m17> python -m uvicorn main:app
 # uvicorn main:app --reload

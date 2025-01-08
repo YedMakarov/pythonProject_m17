@@ -18,16 +18,5 @@ class Task(Base):
     slug = Column(String, unique=True, index=True)
     user = relationship("User", back_populates="tasks")
 
-
-# id - целое число, первичный ключ, с индексом.
-# title - строка.
-# content - строка.
-# priority - целое число, по умолчанию 0.
-# completed - булевое значение, по умолчанию False.
-# user_id - целое число, внешний ключ на id из таблицы 'users', не NULL, с индексом.
-# slug - строка, уникальная, с индексом.
-# user - объект связи с таблицей с таблицей User, где back_populates='tasks'.
-
-from sqlalchemy.schema import CreateTable
-
-print(CreateTable(Task.__table__))
+# from sqlalchemy.schema import CreateTable
+# print(CreateTable(Task.__table__))
